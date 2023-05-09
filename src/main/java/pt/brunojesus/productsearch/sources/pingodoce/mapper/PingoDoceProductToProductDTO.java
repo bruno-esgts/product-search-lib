@@ -1,8 +1,8 @@
 package pt.brunojesus.productsearch.sources.pingodoce.mapper;
 
 
-import pt.brunojesus.productsearch.api.Currency;
-import pt.brunojesus.productsearch.api.Product;
+import pt.brunojesus.productsearch.api.model.Currency;
+import pt.brunojesus.productsearch.api.model.Product;
 import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceProduct;
 
 import java.time.LocalDateTime;

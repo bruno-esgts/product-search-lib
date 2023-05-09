@@ -1,4 +1,4 @@
-package pt.brunojesus.productsearch.api;
+package pt.brunojesus.productsearch.api.model;
 
 import lombok.Builder;
 import lombok.Data;

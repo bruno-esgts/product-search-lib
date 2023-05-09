@@ -1,6 +1,6 @@
 package pt.brunojesus.productsearch.sources;
 
-import pt.brunojesus.productsearch.api.Product;
+import pt.brunojesus.productsearch.api.model.Product;
 import pt.brunojesus.productsearch.exception.ProductFetchException;
 
 import java.util.List;

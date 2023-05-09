@@ -1,14 +1,12 @@
 package pt.brunojesus.productsearch.sources.pingodoce;
 
-import pt.brunojesus.productsearch.api.Product;
+import pt.brunojesus.productsearch.api.model.Product;
 import pt.brunojesus.productsearch.exception.ProductFetchException;
 import pt.brunojesus.productsearch.sources.ProductSource;
 import pt.brunojesus.productsearch.sources.pingodoce.http.PingoDoceClient;
-import pt.brunojesus.productsearch.sources.pingodoce.http.PingoDoceSearchResponseHandler;
 import pt.brunojesus.productsearch.sources.pingodoce.mapper.PingoDoceProductToProductDTO;
 import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceProduct;
 import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceProductWrapper;
-import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceSearchResponse;
 
 import java.io.IOException;
 import java.util.List;
