@@ -12,7 +12,7 @@ You can do it by adding this in your projects `pom.xml`
 <dependency>
   <groupId>pt.brunojesus</groupId>
   <artifactId>product-search-api</artifactId>
-  <version>1.1</version>
+  <version>1.1.1</version>
 </dependency>
 ```
 
