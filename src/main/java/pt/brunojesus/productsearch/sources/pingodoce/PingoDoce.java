@@ -7,8 +7,10 @@ import pt.brunojesus.productsearch.sources.pingodoce.http.PingoDoceClient;
 import pt.brunojesus.productsearch.sources.pingodoce.mapper.PingoDoceProductToProductDTO;
 import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceProduct;
 import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceProductWrapper;
+import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceSection;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 
@@ -32,8 +34,11 @@ public class PingoDoce implements ProductSource {
         List<Product> result = null;
         try {
             result = pingoDoceClient.search(name, 0, 10)
-                    .getSections().getSection().getProducts()
+                    .getSections()
+                    .values()
                     .stream()
+                    .map(PingoDoceSection::getProducts)
+                    .flatMap(Collection::stream)
                     .map(PingoDoceProductWrapper::get_source)
                     .map(mapper)
                     .toList();

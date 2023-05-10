@@ -2,6 +2,8 @@ package pt.brunojesus.productsearch.sources.pingodoce.http;
 
 
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -25,7 +27,13 @@ public class PingoDoceClient {
     }
 
     public PingoDoceSearchResponse search(String searchExpression, int offset, int limit) throws IOException {
-        final String url = String.format(searchUrlFormat, searchExpression, offset, limit);
+        final String url = String.format(
+                searchUrlFormat,
+                URLEncoder.encode(searchExpression, StandardCharsets.UTF_8),
+                offset,
+                limit
+        );
+
         final HttpGet request = createHttpGet(url);
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {

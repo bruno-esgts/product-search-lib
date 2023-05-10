@@ -16,6 +16,7 @@ import java.util.Map;
  * @author Bruno Jesus
  *
  * @version 1.0
+ * @since 2023-05-10
  */
 public class ProductSearch {
 
