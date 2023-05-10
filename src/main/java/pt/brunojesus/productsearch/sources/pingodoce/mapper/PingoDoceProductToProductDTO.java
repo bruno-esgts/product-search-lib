@@ -10,6 +10,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Converts a {@link PingoDoceProduct} into a {@link Product}
+ *
+ * @author Bruno Jesus
+ * @version 1.1
+ * @since 2023-05-10
+ */
 public class PingoDoceProductToProductDTO implements Function<PingoDoceProduct, Product> {
     @Override
     public Product apply(PingoDoceProduct pingoDoceProduct) {

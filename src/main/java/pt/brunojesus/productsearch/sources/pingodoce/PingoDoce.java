@@ -14,6 +14,16 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * PingoDoce {@link ProductSource}
+ * <p>
+ * Implements the required methods in order to interact with the store at
+ * <a href="https://mercadao.pt">Mercadão</a>.
+ *
+ * @author Bruno Jesus
+ * @version 1.1
+ * @since 2023-05-10
+ */
 public class PingoDoce implements ProductSource {
 
     final PingoDoceClient pingoDoceClient;

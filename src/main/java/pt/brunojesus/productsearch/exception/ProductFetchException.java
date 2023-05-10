@@ -1,5 +1,13 @@
 package pt.brunojesus.productsearch.exception;
 
+/**
+ * Exception to be thrown when there's a failure on the {@link pt.brunojesus.productsearch.sources.ProductSource}
+ * implementation when trying to fetch the product list.
+ *
+ * @author Bruno Jesus
+ * @version 1.1
+ * @since 2023-05-11
+ */
 public class ProductFetchException extends Exception {
     public ProductFetchException(String message) {
         super(message);

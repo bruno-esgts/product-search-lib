@@ -7,6 +7,12 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Represents a product fetched from a source
+ *
+ * @author Bruno Jesus
+ * @version 1.1
+ */
 @Data
 @Builder
 public class Product implements Serializable {
