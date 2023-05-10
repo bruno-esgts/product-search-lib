@@ -19,13 +19,13 @@ You can do it by adding this in your projects `pom.xml`
 The dependency listed above is not on maven central, so you need to make
 sure you add the repository to your project's `pom.xml` as well.
 ```xml
-    <distributionManagement>
+    <repositories>
         <repository>
             <id>mvn-brunojesus</id>
             <name>Bruno Jesus MVN Repo</name>
             <url>https://mvn.brunojesus.pt/releases</url>
         </repository>
-    </distributionManagement>
+    </repositories>
 ```
 
 ### Code example
