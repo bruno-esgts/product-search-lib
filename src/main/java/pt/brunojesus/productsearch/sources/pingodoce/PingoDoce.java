@@ -12,6 +12,7 @@ import pt.brunojesus.productsearch.sources.pingodoce.model.PingoDoceSection;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 
 /**
@@ -43,7 +44,14 @@ public class PingoDoce implements ProductSource {
     public List<Product> search(String name) throws ProductFetchException {
         List<Product> result = null;
         try {
-            result = pingoDoceClient.search(name, 0, 10)
+            result = Optional.of(pingoDoceClient.search(name, 0, 10))
+                    .orElseThrow(
+                            () -> ProductFetchException.searchError(
+                                    name,
+                                    "Pingo Doce",
+                                    "Got empty response from store",
+                                    null)
+                    )
                     .getSections()
                     .values()
                     .stream()

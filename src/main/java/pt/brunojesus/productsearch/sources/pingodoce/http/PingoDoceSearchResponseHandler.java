@@ -38,7 +38,17 @@ public class PingoDoceSearchResponseHandler implements HttpClientResponseHandler
     @Override
     public PingoDoceSearchResponse handleResponse(ClassicHttpResponse response) throws IOException {
         if (response.getCode() < 200 || response.getCode() > 299) {
-            return null;
+            String errorMessage = "";
+            try (InputStream body = response.getEntity().getContent()) {
+                errorMessage = new String(body.readAllBytes());
+            }
+            throw new IOException(
+                    String.format(
+                            "Got error code: %d, %s",
+                            response.getCode(), errorMessage
+                    )
+            );
+
         }
 
         try (InputStream body = response.getEntity().getContent()) {

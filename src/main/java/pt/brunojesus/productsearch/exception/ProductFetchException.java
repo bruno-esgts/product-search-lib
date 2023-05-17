@@ -21,4 +21,9 @@ public class ProductFetchException extends Exception {
         final String message = String.format("Error searching for '%s' on '%s'", query, storeName);
         return new ProductFetchException(message, cause);
     }
+
+    public static ProductFetchException searchError(String query, String storeName, String details, Throwable cause) {
+        final String message = String.format("Error searching for '%s' on '%s': %s", query, storeName, details);
+        return new ProductFetchException(message, cause);
+    }
 }
